@@ -1,4 +1,4 @@
-stopwatch-js-website
-====================
+lockstep.info
+=============
 
-A website for the stopwatch.js library.
+A website for the lockstep.js library.
