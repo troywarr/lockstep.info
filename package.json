@@ -1,0 +1,53 @@
+{
+  "name": "lockstep.info",
+  "version": "0.1.0",
+  "description": "Website for the lockstep.info JavaScript library.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/troywarr/lockstep.info.git"
+  },
+  "keywords": [
+    "JavaScript",
+    "timer",
+    "clock",
+    "heartbeat",
+    "pulse",
+    "interval"
+  ],
+  "author": "Troy Warr <troy3000@gmail.com> (http://troywarr.info/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/troywarr/lockstep.info/issues"
+  },
+  "homepage": "https://github.com/troywarr/lockstep.info",
+  "devDependencies": {
+    "browser-sync": "^1.5.2",
+    "coffee-script": "^1.8.0",
+    "del": "^0.1.3",
+    "gulp": "^3.8.8",
+    "gulp-coffee": "^2.2.0",
+    "gulp-concat": "^2.4.1",
+    "gulp-file-include": "^0.5.1",
+    "gulp-if": "^1.2.4",
+    "gulp-imagemin": "^1.0.1",
+    "gulp-jade": "^0.8.0",
+    "gulp-less": "^1.3.6",
+    "gulp-minify-css": "^0.3.10",
+    "gulp-notify": "^1.8.0",
+    "gulp-svg-sprites": "^1.0.3",
+    "gulp-uglify": "^1.0.1",
+    "imagemin-pngcrush": "^1.0.0",
+    "run-sequence": "^0.3.7",
+    "streamqueue": "^0.1.1",
+    "yargs": "^1.3.1"
+  },
+  "dependencies": {
+    "jquery": "^2.1.1",
+    "normalize.css": "^3.0.1",
+    "underscore": "^1.7.0"
+  }
+}
