@@ -155,9 +155,13 @@
 </head>
 <body>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="0" height="0" style="position:absolute">
+
+    <symbol id="icon-mark-github" viewBox="0 0 512 512">
+        <path stroke="#449FDB" d="M0 0"/><path d="M256 0C114.625 0 0 114.625 0 256c0 113.125 73.344 209.063 175.078 242.906 12.797 2.344 17.47-5.563 17.47-12.313 0-6.094-.235-26.28-.36-47.656-71.188 15.47-86.234-30.188-86.234-30.188-11.656-29.564-28.422-37.44-28.422-37.44-23.266-15.874 1.765-15.562 1.765-15.562 25.703 1.78 39.235 26.375 39.235 26.375 22.844 39.125 59.938 27.813 74.5 21.25 2.327-16.5 8.952-27.813 16.25-34.188-56.828-6.47-116.61-28.438-116.61-126.53 0-27.97 9.985-50.782 26.33-68.704-2.61-6.5-11.423-32.546 2.53-67.78 0 0 21.47-6.875 70.406 26.25 20.406-5.703 42.297-8.516 64.063-8.61 21.75.095 43.657 2.94 64.095 8.642 48.844-33.156 70.344-26.25 70.344-26.25 14 35.266 5.187 61.28 2.562 67.75 16.406 17.922 26.313 40.734 26.313 68.703 0 98.344-59.875 120-116.906 126.344 9.218 7.937 17.374 23.5 17.374 47.374 0 34.22-.344 61.813-.344 70.25 0 6.813 4.656 14.78 17.625 12.28C438.72 465 512.003 369.062 512.003 256c0-141.376-114.625-256-256-256z"/>
+    </symbol>
 </svg>
 <header>
-    <h1 id="logo">Gulp SVG Sprites <small>(0 icons in &lt;symbol&gt; mode)</small></h1>
+    <h1 id="logo">Gulp SVG Sprites <small>(1 icons in &lt;symbol&gt; mode)</small></h1>
     <h4>Files Generated:</h4>
     <ol>
         <li><a href="svg/symbols.svg">svg/symbols.svg</a></li>
@@ -175,6 +179,22 @@
 </header>
 <section>
     <ul class="icon-boxes">
+        
+        <li title="icon-mark-github">
+            <div class="icon-box" id="icon-box-icon-mark-github">
+                <svg class="icon">
+                    <use xlink:href="#icon-mark-github" />
+                </svg>
+            </div>
+            <h2>icon-mark-github</h2>
+            <button onclick="showPopover('snippet-icon-mark-github')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-icon-mark-github')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-icon-mark-github">
+                <pre><code>&lt;svg class=&quot;icon&quot;&gt;&lt;use xlink:href=&quot;#icon-mark-github&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
         
     </ul>
 </section>
