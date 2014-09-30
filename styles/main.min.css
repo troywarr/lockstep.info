@@ -730,10 +730,15 @@ textarea {
 }
 
 @import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700);
+body {
+  padding: 20px;
+}
 h1 {
   font-family: 'PT Sans Narrow', sans-serif;
   font-weight: 700;
   font-size: 36px;
-  margin: 4em 0 0.5em;
   text-align: center;
+}
+.cp_embed_iframe {
+  margin-top: 20px;
 }
