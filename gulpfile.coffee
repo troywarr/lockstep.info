@@ -40,7 +40,7 @@ gulp.task 'browser-sync', ->
     server:
       baseDir: paths.dist
       directory: true
-    port: 2000
+    port: 2002
     browser: 'google chrome'
     startPath: paths.start
 
