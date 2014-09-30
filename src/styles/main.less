@@ -2,36 +2,211 @@
 @import 'lib/mixins.less';
 
 
-// fonts
+// variables
 
-@import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700);
+@paddingBodyHorizontal: {
+  padding-left: 3rem;
+  padding-right: 3rem;
+};
+@paddingHeaderVertical: {
+  padding-top: 2rem;
+  padding-bottom: 1.8rem;
+};
+@paddingFooterVertical: {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+};
+@colorBase: #394d57;
+@colorHeader: lighten(@colorBase, 15%);
+@colorFooter: darken(@colorBase, 10%);
 
-@ptSansNarrow: {
-  font-family: 'PT Sans Narrow', sans-serif;
+
+// fonts (loaded with <link> in <head>)
+
+@istokWeb: {
+  font-family: 'Istok Web', sans-serif;
   font-weight: 400;
 };
 
-@ptSansNarrowBold: {
-  font-family: 'PT Sans Narrow', sans-serif;
+@istokWebItalic: {
+  font-family: 'Istok Web', sans-serif;
+  font-weight: 400;
+  font-style: italic;
+};
+
+@istokWebBold: {
+  font-family: 'Istok Web', sans-serif;
   font-weight: 700;
 };
 
+@istokWebBoldItalic: {
+  font-family: 'Istok Web', sans-serif;
+  font-weight: 700;
+  font-style: italic;
+};
 
-// basic layout
 
-body {
-  padding: 20px;
+// general
+
+* {
+  .box-sizing(border-box);
 }
 
-h1 {
-  @ptSansNarrowBold();
-  font-size: 36px;
-  text-align: center;
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+iframe {
+  display: block;
+  border: none;
+}
+
+article,
+header,
+footer {
+  .inner {
+    @paddingBodyHorizontal();
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+}
+
+
+// sticky footer (see: http://galengidman.com/2014/03/25/responsive-flexible-height-sticky-footers-in-css/)
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: table;
+  width: 100%;
+}
+
+.page-row {
+  display: table-row;
+  height: 1px;
+}
+
+.page-row-expanded {
+  height: 100%;
+}
+
+
+// header
+
+header {
+  background-color: lighten(@colorBase, 15%);
+  color: #fff;
+
+  .inner {
+    .clearFix();
+    @paddingHeaderVertical();
+  }
+
+  h1 {
+    @istokWebBold();
+    font-size: 3.6rem;
+    float: left;
+    margin: 0;
+    line-height: 1.1;
+  }
+
+  nav {
+    @istokWeb();
+    float: right;
+    margin-right: -1rem; // offset padding-right on child <a>
+
+    ul {
+      .clearFix();
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      list-style: none;
+      float: left;
+
+      & + li {
+        margin-left: 2rem;
+      }
+    }
+
+    a {
+      color: lighten(@colorHeader, 30%);
+      text-decoration: none;
+      text-transform: uppercase;
+      display: block;
+      line-height: 2.5;
+      padding: 0.3rem 1rem; // extra click/touch area
+
+      .icon {
+        vertical-align: middle;
+        margin: -0.2rem 0.8rem 0 0;
+      }
+
+      &:hover,
+      &:active {
+        color: lighten(@colorHeader, 50%);
+
+        .icon {
+          fill: lighten(@colorHeader, 50%);
+        }
+      }
+    }
+  }
+}
+
+
+// article
+
+article {
+  color: #222;
+
+  p {
+    line-height: 1.5;
+  }
+
+  h2 {
+    font-size: 3rem;
+  }
+}
+
+
+// footer
+
+footer {
+  background-color: darken(@colorBase, 10%);
+  color: #fff;
+  margin-top: 5rem;
+
+  .inner {
+    @paddingFooterVertical();
+  }
 }
 
 
 // CodePen examples
 
 .cp_embed_iframe {
-  margin-top: 20px;
+  margin-top: 1rem;
+}
+
+
+// SVG icons
+
+.icon {
+  display: inline-block;
+  fill: #333;
+}
+
+.icon-mark-github {
+  .box(3rem);
+  fill: lighten(@colorHeader, 25%);
 }
