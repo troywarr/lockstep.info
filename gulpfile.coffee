@@ -60,6 +60,15 @@ gulp.task 'root', ->
 
 
 
+# copy code snippets (used by Prism.js)
+gulp.task 'snippets', ->
+  gulp
+    .src "#{paths.src}snippets/**/*",
+      base: paths.src # see: http://stackoverflow.com/questions/21546931/use-gulp-to-select-and-move-directories-and-their-files
+    .pipe gulp.dest paths.dist
+
+
+
 # compile LESS, combine with vendor CSS & minify
 #   see: https://github.com/gulpjs/gulp/blob/master/docs/recipes/using-multiple-sources-in-one-task.md
 gulp.task 'styles', ->
@@ -72,6 +81,7 @@ gulp.task 'styles', ->
       .src [
         "#{paths.npm}normalize.css/normalize.css"
         "#{paths.src}styles/vendor/main.css" # from HTML5 Boilerplate
+        "#{paths.src}styles/vendor/prism.css"
       ]
   )
 
@@ -104,6 +114,7 @@ gulp.task 'scripts', ->
         "#{paths.npm}jquery/dist/jquery.js"
         "#{paths.npm}underscore/underscore.js"
         "#{paths.src}scripts/vendor/modernizr.js"
+        "#{paths.src}scripts/vendor/prism.js"
       ]
   )
 
@@ -189,6 +200,6 @@ gulp.task 'watch', ->
 
 # default task: call with 'gulp' on command line
 gulp.task 'default', ->
-  runSequence 'clean', 'root', 'html', 'styles', 'scripts', 'images', ->
+  runSequence 'clean', 'root', 'snippets', 'html', 'styles', 'scripts', 'images', ->
     if DEV
       runSequence 'watch', 'browser-sync'

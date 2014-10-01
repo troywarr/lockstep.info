@@ -9,7 +9,7 @@ html(class="no-js", lang="en")
     meta(name="description", content="Lockstep.js, a JavaScript library to create accurate timers.")
     meta(name="viewport", content="width=device-width, initial-scale=1")
 
-    link(rel="stylesheet", href="http://fonts.googleapis.com/css?family=Istok+Web:400,700,400italic,700italic")
+    link(rel="stylesheet", href="http://fonts.googleapis.com/css?family=Istok+Web:400,700,400italic,700italic|Droid+Serif:400,700,400italic,700italic")
     link(rel="stylesheet", href="styles/main.min.css")
 
   body
@@ -32,16 +32,25 @@ html(class="no-js", lang="en")
             li
               a(href="") Examples
             li
+              a(href="") Features
+            li.fork
               a(href="https://github.com/troywarr/lockstep-js", target="_blank")
                 svg.icon.icon-mark-github
                   use(xlink:href="#icon-mark-github")
                 | Fork
+            li.download
+              a(href="https://github.com/troywarr/lockstep-js/archive/master.zip")
+                svg.icon.icon-file-zip-o
+                  use(xlink:href="#icon-file-zip-o")
+                | Download
 
     article.page-row.page-row-expanded
       section.inner
         h2 Lorem Ipsum
         p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi dolorum porro quo excepturi laudantium magni atque iure quam officiis doloremque aperiam, quasi! Quae itaque soluta temporibus, earum ratione nemo harum!
         p Repellat iusto laboriosam, modi totam maiores pariatur dolores laborum, sunt unde nam explicabo sequi error cumque molestiae cupiditate earum, vero aliquam aut. Fuga consequuntur voluptate doloremque quos iste optio sapiente, numquam, eius deserunt at iusto maiores porro dolore. Laboriosam, repellat architecto repudiandae sequi deleniti.
+        pre(data-src="../snippets/1.js")
+          code
         p Assumenda accusantium cum a corrupti beatae unde doloribus tempore, aut saepe sunt voluptas molestiae illum, obcaecati libero atque natus velit exercitationem voluptates?
         p(data-height="250", data-theme-id="0", data-slug-hash="futik", data-default-tab="result", data-user="troywarr", class="codepen")
           See the Pen #[a(href="http://codepen.io/troywarr/pen/futik/") futik] by Troy Warr (#[a(href="http://codepen.io/troywarr") @troywarr]) on [a(href="http://codepen.io") CodePen].
@@ -50,8 +59,8 @@ html(class="no-js", lang="en")
     footer.page-row
       section.inner
         div.social-code
-          iframe(src="http://ghbtns.com/github-btn.html?user=troywarr&repo=lockstep-js&type=watch&count=true&size=large", width="160", height="30")
-          iframe(src="http://ghbtns.com/github-btn.html?user=troywarr&repo=lockstep-js&type=fork&count=true&size=large", width="160", height="30")
-          iframe(src="http://ghbtns.com/github-btn.html?user=troywarr&repo=lockstep-js&type=follow&count=true&size=large", width="240", height="30")
+          //- iframe(src="http://ghbtns.com/github-btn.html?user=troywarr&repo=lockstep-js&type=watch&count=true&size=large", width="160", height="30")
+          //- iframe(src="http://ghbtns.com/github-btn.html?user=troywarr&repo=lockstep-js&type=fork&count=true&size=large", width="160", height="30")
+          //- iframe(src="http://ghbtns.com/github-btn.html?user=troywarr&repo=lockstep-js&type=follow&count=true&size=large", width="240", height="30")
 
     script(src="scripts/main.min.js")
