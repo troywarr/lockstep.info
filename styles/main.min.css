@@ -1080,11 +1080,11 @@ header .fork .icon {
 }
 header .download a {
   color: #fff;
-  -webkit-border-radius: 3px;
+  -webkit-border-radius: 4px;
   -webkit-background-clip: padding-box;
-  -moz-border-radius: 3px;
+  -moz-border-radius: 4px;
   -moz-background-clip: padding;
-  border-radius: 3px;
+  border-radius: 4px;
   background-clip: padding-box;
   background-color: #394d57;
 }
@@ -1107,7 +1107,7 @@ article p {
   font-family: 'Droid Serif', serif;
   font-weight: 400;
   font-size: 1.8rem;
-  line-height: 1.5;
+  line-height: 1.7;
   color: #555;
 }
 article h2 {
