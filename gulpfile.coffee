@@ -176,7 +176,7 @@ gulp.task 'svg-icons', ->
 # copy HTML
 gulp.task 'html', ['svg-icons'], ->
   gulp
-    .src "#{paths.src}*.jade"
+    .src "#{paths.src}pages/*.jade"
     .pipe jade()
     .pipe fileInclude
       basepath: paths.dist
@@ -192,8 +192,10 @@ gulp.task 'watch', ->
   gulp.watch "#{paths.src}scripts/**/*", ['scripts']
   gulp.watch "#{paths.src}images/**/*", ['images']
   gulp.watch [
-    "#{paths.src}*.jade"
+    "#{paths.src}pages/*.jade"
+    "#{paths.src}layouts/*.jade"
     "#{paths.src}icons/*.svg"
+    # "#{paths.src}snippets/**/*.*" # TODO: why does data-src XHR return 304?
   ], ['html']
 
 
