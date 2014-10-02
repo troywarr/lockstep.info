@@ -195,8 +195,9 @@ gulp.task 'watch', ->
     "#{paths.src}pages/*.jade"
     "#{paths.src}layouts/*.jade"
     "#{paths.src}icons/*.svg"
-    # "#{paths.src}snippets/**/*.*" # TODO: why does data-src XHR return 304?
+    "#{paths.src}snippets/**/*.*" # TODO: why does data-src XHR return 304 for .js files?
   ], ['html']
+  gulp.watch "#{paths.src}snippets/**/*", ['snippets']
 
 
 

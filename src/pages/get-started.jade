@@ -5,7 +5,7 @@ block title
 
 block page-nav
   li
-    a.selected(href="get-started.html") Get Started
+    a.selected Get Started
   li
     a(href="documentation.html") Docs
   li
@@ -14,5 +14,23 @@ block page-nav
     a(href="features.html") Features
 
 block content
-  h2 Get Started
-  p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi dolorum porro quo excepturi laudantium magni atque iure quam officiis doloremque aperiam, quasi! Quae itaque soluta temporibus, earum ratione nemo harum!
+  h2 Installation
+  p Lockstep.js is available as an #[a(href="https://www.npmjs.org/", rel="external") npm package], #[a(href="https://www.npmjssads.org/", rel="external") Bower package], or #[a(href="https://github.com/troywarr/lockstep-js/archive/master.zip") ZIP file].
+  h3 npm
+  p To install Lockstep.js via #[a(href="https://www.npmjs.org/", rel="external") npm]:
+  pre(data-src="../snippets/bash/1.bash")
+  p This will download the package and add it as a dependency in #[a(href="https://www.npmjs.org/doc/files/package.json.html#dependencies", rel="external") package.json] .
+  h3 Bower
+  p To install Lockstep.js via #[a(href="http://bower.io/", rel="external") Bower]:
+  pre(data-src="../snippets/bash/2.bash")
+  p This will download the package and add it as a dependency in #[a(href="https://github.com/bower/bower.json-spec#dependencies", rel="external") bower.json] .
+  h3 ZIP File Download
+  p #[a(href="https://github.com/troywarr/lockstep-js/archive/master.zip") Download Lockstep.js] and unzip the file. In the #[code dist/] folder, you'll find:
+  ul
+    li #[code lockstep.js]: development version
+    li #[code lockstep.min.js]: minified production version
+  p Load the script in your HTML document:
+  pre(data-src="../snippets/html/1.html")
+  p This script creates the global object #[code Lockstep], a constructor for Lockstep instances. In the next section, we'll find out how to use it.
+  h2 Basic Usage
+  p Iure fuga, nihil aperiam obcaecati molestiae quas doloremque nostrum aut placeat a atque ratione omnis tenetur nesciunt dolorem nulla cumque rem quisquam!

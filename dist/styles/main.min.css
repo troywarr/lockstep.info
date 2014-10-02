@@ -729,7 +729,7 @@ textarea {
     }
 }
 
-/* http://prismjs.com/download.html?themes=prism&languages=clike+javascript&plugins=line-highlight+line-numbers+file-highlight+show-language */
+/* http://prismjs.com/download.html?themes=prism&languages=markup+clike+javascript+bash&plugins=line-highlight+line-numbers+file-highlight+show-language */
 /**
  * prism.js default theme for JavaScript, CSS and HTML
  * Based on dabblet (http://dabblet.com)
@@ -879,9 +879,9 @@ pre[data-line] {
 	background: -webkit-linear-gradient(left, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
 	background: -o-linear-gradient(left, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
 	background: linear-gradient(left, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
-	
+
 	pointer-events: none;
-	
+
 	line-height: inherit;
 	white-space: pre;
 }
@@ -903,7 +903,7 @@ pre[data-line] {
 		text-shadow: none;
 		box-shadow: 0 1px white;
 	}
-	
+
 	.line-highlight[data-end]:after {
 		content: attr(data-end);
 		top: auto;
@@ -995,6 +995,9 @@ footer .inner {
   max-width: 1080px;
   margin: 0 auto;
 }
+code {
+  font-size: 1.5rem;
+}
 html,
 body {
   height: 100%;
@@ -1059,6 +1062,12 @@ header nav li + li {
   margin-left: 1rem;
 }
 header a {
+  -webkit-border-radius: 4px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 4px;
+  -moz-background-clip: padding;
+  border-radius: 4px;
+  background-clip: padding-box;
   color: #adbfc9;
   text-decoration: none;
   text-transform: uppercase;
@@ -1066,12 +1075,20 @@ header a {
   line-height: 2.5;
   padding: 0.7rem 1.5rem 0.5rem;
 }
+header a.selected {
+  background-color: #6f90a1;
+  padding-top: 0.2rem;
+  padding-bottom: 0;
+  margin-top: 0.5rem;
+}
 header a:hover,
-header a:active {
+header a:active,
+header a.selected {
   color: #eaeff1;
 }
 header a:hover .icon,
-header a:active .icon {
+header a:active .icon,
+header a.selected .icon {
   fill: #eaeff1;
 }
 header .fork .icon {
@@ -1097,25 +1114,61 @@ header .download .icon {
   margin: -0.1rem 0.5rem 0 0;
 }
 article {
-  color: #222;
+  color: #333333;
 }
 article .inner {
   margin-top: 4rem;
   margin-bottom: 6rem;
 }
-article p {
-  font-family: 'Droid Serif', serif;
+article p,
+article li {
+  font-family: 'Merriweather', serif;
   font-weight: 400;
-  font-size: 1.8rem;
-  line-height: 1.7;
-  color: #555;
+  font-size: 1.6rem;
+  line-height: 1.9;
+  color: #737373;
+}
+article p a,
+article li a {
+  color: #1c94c6;
+}
+article p a:visited,
+article li a:visited {
+  color: #167399;
+}
+article p a:hover,
+article li a:hover,
+article p a:active,
+article li a:active {
+  text-decoration: none;
+}
+article p .icon,
+article li .icon {
+  vertical-align: middle;
+  padding: 0 1px 0 4px;
+  margin-top: -2px;
+}
+article p code,
+article li code {
+  background-color: #ebe5e1;
+  padding: 4px 6px;
+  font-family: Consolas, Monaco, 'Andale Mono', monospace;
+  color: #000;
+  text-shadow: 0 1px white;
 }
 article h2 {
   font-family: 'Istok Web', sans-serif;
   font-weight: 400;
   font-size: 3rem;
   text-transform: uppercase;
-  margin: 4rem 0 2rem 0;
+  margin: 5.5rem 0 1.4rem 0;
+}
+article h3 {
+  font-family: 'Istok Web', sans-serif;
+  font-weight: 400;
+  font-size: 2.4rem;
+  margin: 3.4rem 0 1.2rem 0;
+  color: #595959;
 }
 footer {
   background-color: #253238;
@@ -1127,7 +1180,7 @@ footer .inner {
   min-height: 300px;
 }
 pre[class*="language-"] {
-  margin: 2.5rem 0;
+  margin: 2rem 0;
 }
 .cp_embed_iframe {
   margin: 2.5rem 0;
@@ -1145,4 +1198,9 @@ pre[class*="language-"] {
   width: 2.5rem;
   height: 2.5rem;
   fill: #fff;
+}
+.icon-link-external {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: #9db4bf;
 }

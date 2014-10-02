@@ -9,17 +9,17 @@ class GoogleAnalytics
       l: +new Date()
 
   trackPageview: ->
-    window.ga 'create', 'UA-55183285-2', 'auto'
-    window.ga 'send', 'pageview'
+    window.ga('create', 'UA-55183285-2', 'auto')
+    window.ga('send', 'pageview')
 
   init: =>
     $.ajax
       url: '//www.google-analytics.com/analytics.js'
       dataType: 'script'
       cache: true # see: http://davidwalsh.name/loading-scripts-jquery
-    .done @trackPageview
+    .done(@trackPageview)
 
 
 
 # register
-(window.troyWarr ?= {}).GoogleAnalytics = GoogleAnalytics
+(window.lockstepInfo ?= {}).GoogleAnalytics = GoogleAnalytics

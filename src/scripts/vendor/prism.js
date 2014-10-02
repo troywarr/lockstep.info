@@ -1,4 +1,4 @@
-/* http://prismjs.com/download.html?themes=prism&languages=clike+javascript&plugins=line-highlight+line-numbers+file-highlight+show-language */
+/* http://prismjs.com/download.html?themes=prism&languages=markup+clike+javascript+bash&plugins=line-highlight+line-numbers+file-highlight+show-language */
 self = (typeof window !== 'undefined')
 	? window   // if in browser
 	: (
@@ -395,6 +395,48 @@ if (typeof module !== 'undefined' && module.exports) {
 	module.exports = Prism;
 }
 ;
+Prism.languages.markup = {
+	'comment': /<!--[\w\W]*?-->/g,
+	'prolog': /<\?.+?\?>/,
+	'doctype': /<!DOCTYPE.+?>/,
+	'cdata': /<!\[CDATA\[[\w\W]*?]]>/i,
+	'tag': {
+		pattern: /<\/?[\w:-]+\s*(?:\s+[\w:-]+(?:=(?:("|')(\\?[\w\W])*?\1|[^\s'">=]+))?\s*)*\/?>/gi,
+		inside: {
+			'tag': {
+				pattern: /^<\/?[\w:-]+/i,
+				inside: {
+					'punctuation': /^<\/?/,
+					'namespace': /^[\w-]+?:/
+				}
+			},
+			'attr-value': {
+				pattern: /=(?:('|")[\w\W]*?(\1)|[^\s>]+)/gi,
+				inside: {
+					'punctuation': /=|>|"/g
+				}
+			},
+			'punctuation': /\/?>/g,
+			'attr-name': {
+				pattern: /[\w:-]+/g,
+				inside: {
+					'namespace': /^[\w-]+?:/
+				}
+			}
+
+		}
+	},
+	'entity': /\&#?[\da-z]{1,8};/gi
+};
+
+// Plugin to make entity title show the real entity, idea by Roman Komarov
+Prism.hooks.add('wrap', function(env) {
+
+	if (env.type === 'entity') {
+		env.attributes['title'] = env.content.replace(/&amp;/, '&');
+	}
+});
+;
 Prism.languages.clike = {
 	'comment': [
 		{
@@ -454,6 +496,31 @@ if (Prism.languages.markup) {
 		}
 	});
 }
+;
+Prism.languages.bash = Prism.languages.extend('clike', {
+	'comment': {
+		pattern: /(^|[^"{\\])(#.*?(\r?\n|$))/g,
+		lookbehind: true
+	},
+	'string': {
+		//allow multiline string
+		pattern: /("|')(\\?[\s\S])*?\1/g,
+		inside: {
+			//'property' class reused for bash variables
+			'property': /\$([a-zA-Z0-9_#\?\-\*!@]+|\{[^\}]+\})/g
+		}
+	},
+	'keyword': /\b(if|then|else|elif|fi|for|break|continue|while|in|case|function|select|do|done|until|echo|exit|return|set|declare)\b/g
+});
+
+Prism.languages.insertBefore('bash', 'keyword', {
+	//'property' class reused for bash variables
+	'property': /\$([a-zA-Z0-9_#\?\-\*!@]+|\{[^}]+\})/g
+});
+Prism.languages.insertBefore('bash', 'comment', {
+	//shebang must be before comment, 'important' class from css reused
+	'important': /(^#!\s*\/bin\/bash)|(^#!\s*\/bin\/sh)/g
+});
 ;
 (function(){
 

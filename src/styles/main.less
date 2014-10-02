@@ -17,6 +17,7 @@
   padding-bottom: 3rem;
 };
 @colorBase: #394d57;
+@colorText: #333;
 @colorHeader: lighten(@colorBase, 15%);
 @colorFooter: darken(@colorBase, 10%);
 
@@ -45,9 +46,48 @@
   font-style: italic;
 };
 
-@droidSerif: {
-  font-family: 'Droid Serif', serif;
+@merriweatherLight: {
+  font-family: 'Merriweather', serif;
+  font-weight: 300;
+};
+
+@merriweatherLightItalic: {
+  font-family: 'Merriweather', serif;
+  font-weight: 300;
+  font-style: italic;
+};
+
+@merriweather: {
+  font-family: 'Merriweather', serif;
   font-weight: 400;
+};
+
+@merriweatherItalic: {
+  font-family: 'Merriweather', serif;
+  font-weight: 400;
+  font-style: italic;
+};
+
+@merriweatherBold: {
+  font-family: 'Merriweather', serif;
+  font-weight: 700;
+};
+
+@merriweatherBoldItalic: {
+  font-family: 'Merriweather', serif;
+  font-weight: 700;
+  font-style: italic;
+};
+
+@merriweatherUltraBold: {
+  font-family: 'Merriweather', serif;
+  font-weight: 900;
+};
+
+@merriweatherUltraBoldItalic: {
+  font-family: 'Merriweather', serif;
+  font-weight: 900;
+  font-style: italic;
 };
 
 
@@ -79,6 +119,10 @@ footer {
     max-width: 1080px;
     margin: 0 auto;
   }
+}
+
+code {
+  font-size: 1.5rem;
 }
 
 
@@ -144,6 +188,7 @@ header {
   }
 
   a {
+    .border-radius(4px);
     color: lighten(@colorHeader, 30%);
     text-decoration: none;
     text-transform: uppercase;
@@ -151,8 +196,16 @@ header {
     line-height: 2.5;
     padding: 0.7rem 1.5rem 0.5rem; // extra click/touch area
 
+    &.selected {
+      background-color: lighten(@colorHeader, 10%);
+      padding-top: 0.2rem;
+      padding-bottom: 0;
+      margin-top: 0.5rem;
+    }
+
     &:hover,
-    &:active {
+    &:active,
+    &.selected {
       color: lighten(@colorHeader, 50%);
 
       .icon {
@@ -191,25 +244,60 @@ header {
 // article
 
 article {
-  color: #222;
+  color: @colorText;
 
   .inner {
     margin-top: 4rem;
     margin-bottom: 6rem;
   }
 
-  p {
-    @droidSerif();
-    font-size: 1.8rem;
-    line-height: 1.7;
-    color: #555;
+  p,
+  li {
+    @merriweather();
+    font-size: 1.6rem;
+    line-height: 1.9;
+    color: lighten(@colorText, 25%);
+
+    a {
+      color: #1c94c6;
+
+      &:visited {
+        color: darken(#1c94c6, 10%);
+      }
+
+      &:hover,
+      &:active {
+        text-decoration: none;
+      }
+    }
+
+    .icon {
+      vertical-align: middle;
+      padding: 0 1px 0 4px;
+      margin-top: -2px;
+    }
+
+    code {
+      background-color: darken(#f5f2f0, 5%);
+      padding: 4px 6px;
+      font-family: Consolas, Monaco, 'Andale Mono', monospace;
+      color: #000;
+      text-shadow: 0 1px white;
+    }
   }
 
   h2 {
     @istokWeb();
     font-size: 3rem;
     text-transform: uppercase;
-    margin: 4rem 0 2rem 0;
+    margin: 5.5rem 0 1.4rem 0;
+  }
+
+  h3 {
+    @istokWeb();
+    font-size: 2.4rem;
+    margin: 3.4rem 0 1.2rem 0;
+    color: lighten(@colorText, 15%);
   }
 }
 
@@ -230,7 +318,7 @@ footer {
 // Prism.js code snippets
 
 pre[class*="language-"] {
-  margin: 2.5rem 0;
+  margin: 2rem 0;
 }
 
 
@@ -256,4 +344,9 @@ pre[class*="language-"] {
 .icon-file-zip-o {
   .box(2.5rem);
   fill: #fff;
+}
+
+.icon-link-external {
+  .box(1.5rem);
+  fill: lighten(@colorHeader, 25%);
 }
