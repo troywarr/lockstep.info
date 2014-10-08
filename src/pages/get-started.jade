@@ -19,18 +19,40 @@ block content
   h3 npm
   p To install Lockstep.js via #[a(href="https://www.npmjs.org/", rel="external") npm]:
   pre(data-src="../snippets/bash/1.bash")
-  p This will download the package and add it as a dependency in #[a(href="https://www.npmjs.org/doc/files/package.json.html#dependencies", rel="external") package.json] .
+  p This will download the package and add it as a dependency in #[a(href="https://www.npmjs.org/doc/files/package.json.html#dependencies", rel="external") package.json].
   h3 Bower
   p To install Lockstep.js via #[a(href="http://bower.io/", rel="external") Bower]:
   pre(data-src="../snippets/bash/2.bash")
-  p This will download the package and add it as a dependency in #[a(href="https://github.com/bower/bower.json-spec#dependencies", rel="external") bower.json] .
+  p This will download the package and add it as a dependency in #[a(href="https://github.com/bower/bower.json-spec#dependencies", rel="external") bower.json].
   h3 ZIP File Download
   p #[a(href="https://github.com/troywarr/lockstep-js/archive/master.zip") Download Lockstep.js] and unzip the file. In the #[code dist/] folder, you'll find:
   ul
     li #[code lockstep.js]: development version
     li #[code lockstep.min.js]: minified production version
-  p Load the script in your HTML document:
+  p Load the appropriate script in your HTML document:
   pre(data-src="../snippets/html/1.html")
   p This script creates the global object #[code Lockstep], a constructor for Lockstep instances. In the next section, we'll find out how to use it.
   h2 Basic Usage
-  p Iure fuga, nihil aperiam obcaecati molestiae quas doloremque nostrum aut placeat a atque ratione omnis tenetur nesciunt dolorem nulla cumque rem quisquam!
+  p Here's a quick introduction to using Lockstep. For a complete breakdown of the API, see the #[a(href="documentation.html#") docs].
+  h3 Setup
+  p A Lockstep instance requires at least a callback function supplied as an argument to the constructor function. This function is called on every "step" of the Lockstep timer, which occurs on every screen refresh (usually 60 times/second, or 60Hz).
+  p When Lockstep calls the #[code step] function, it passes as an argument an #[code info] object containing a number of properties that describe the current state of the Lockstep instance. These are detailed in the #[a(href="documentation.html#") documentation].
+  p Instantiate Lockstep with a #[code step] callback as an argument:
+  pre(data-src="../snippets/javascript/2.js")
+  p You can also pass an options object as the first argument, and the #[code step] callback as the second argument:
+  pre(data-src="../snippets/javascript/3.js")
+  p Or, you can supply the #[code step] callback as a property of the options object:
+  pre(data-src="../snippets/javascript/4.js")
+  p It's as simple as that! Next, we'll use some of Lockstep's methods to interact with it.
+  h3 Usage
+  p Lockstep is essentially a timer, and thus has all of the methods you'd expect.
+  p You can start the timer, which will begin to call the #[code step] function at regular intervals:
+  pre(data-src="../snippets/javascript/5.js")
+  p It will run indefinitely until you stop it:
+  pre(data-src="../snippets/javascript/6.js")
+  p At any point, you can reset the timer:
+  pre(data-src="../snippets/javascript/7.js")
+  p This zeroes out the elapsed time, but the timer continues to run. If you'd like it to stop when it's reset, either call the #[code .stop()] method just before #[code .reset()], or pass #[code true] to the latter:
+  pre(data-src="../snippets/javascript/8.js")
+  p The #[code step] function that you supply will always receive the #[code info] object containing all of the data available to the timer. But, sometimes you may need this between steps. You can always access the immediate state of #[code info]:
+  pre(data-src="../snippets/javascript/9.js")

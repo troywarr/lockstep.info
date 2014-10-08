@@ -133,8 +133,6 @@ gulp.task 'scripts', ->
     .pipe concat 'main.min.js'
     .pipe gulpIf PROD, uglify()
     .pipe gulp.dest "#{paths.dist}scripts/"
-    .pipe gulpIf DEV, browserSync.reload
-      stream: true
 
 
 
@@ -154,8 +152,6 @@ gulp.task 'images', ->
         pngCrush()
       ]
     .pipe gulp.dest "#{paths.dist}images/"
-    .pipe gulpIf DEV, browserSync.reload
-      stream: true
 
 
 
@@ -181,23 +177,20 @@ gulp.task 'html', ['svg-icons'], ->
     .pipe fileInclude
       basepath: paths.dist
     .pipe gulp.dest paths.dist
-    .pipe gulpIf DEV, browserSync.reload
-      stream: true
 
 
 
 # watch for changes
 gulp.task 'watch', ->
   gulp.watch "#{paths.src}styles/**/*", ['styles']
-  gulp.watch "#{paths.src}scripts/**/*", ['scripts']
-  gulp.watch "#{paths.src}images/**/*", ['images']
+  gulp.watch "#{paths.src}scripts/**/*", ['scripts', browserSync.reload]
+  gulp.watch "#{paths.src}images/**/*", ['images', browserSync.reload]
   gulp.watch [
     "#{paths.src}pages/*.jade"
     "#{paths.src}layouts/*.jade"
     "#{paths.src}icons/*.svg"
-    "#{paths.src}snippets/**/*.*" # TODO: why does data-src XHR return 304 for .js files?
-  ], ['html']
-  gulp.watch "#{paths.src}snippets/**/*", ['snippets']
+  ], ['html', browserSync.reload]
+  gulp.watch "#{paths.src}snippets/**/*", ['snippets', browserSync.reload]
 
 
 
