@@ -8,7 +8,7 @@ class ExternalLinks
     $link.attr('target', '_blank')
 
   addIcon: ($link) ->
-    $link.append '<svg class="icon icon-link-external"><use xlink:href="#icon-link-external"></use></svg>' # TODO: render Jade template
+    $link.append('<svg class="icon icon-link-external"><use xlink:href="#icon-link-external"></use></svg>') # TODO: render Jade template
 
   init: =>
     @$links.each (i, element) =>

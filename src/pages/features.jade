@@ -13,6 +13,29 @@ block page-nav
   li
     a.selected Features
 
-block content
-  h2 Features
-  p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi dolorum porro quo excepturi laudantium magni atque iure quam officiis doloremque aperiam, quasi! Quae itaque soluta temporibus, earum ratione nemo harum!
+block article
+  section
+    h2#features Features
+    p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi dolorum porro quo excepturi laudantium magni atque iure quam officiis doloremque aperiam, quasi! Quae itaque soluta temporibus, earum ratione nemo harum!
+    h3 Accurate Timing
+    ul
+      li Relies on the
+    h3 High Precision
+    ul
+      li Uses the #[a(href="http://www.w3.org/TR/hr-time/", rel="external") High Resolution Time API] #[a(href="http://caniuse.com/#feat=high-resolution-time", rel="external") when available]. If so, #[a(href="#") time objects] will contain a #[code microseconds] property.
+      li Otherwise, uses the #[a(href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date", rel="external") Date] object to provide millisecond precision.
+    h3 Efficient
+    ul
+      li Uses #[a(href="http://www.w3.org/TR/animation-timing/#requestAnimationFrame", rel="external") requestAnimationFrame] #[a(href="http://caniuse.com/#feat=requestanimationframe", rel="external") when available] to minimize viewport redraws (#[a(href="http://creativejs.com/resources/requestanimationframe/", rel="external") explanation]).
+      li Otherwise, uses a #[a(href="https://gist.github.com/paulirish/1579671", rel="external") polyfill] for older browsers.
+    h3 Intuitive API
+    p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus provident quo quaerat sequi cumque, obcaecati tenetur reprehenderit in eveniet! Explicabo, non quibusdam nulla itaque commodi sed quos error id aliquid.
+    h3 Flexible Usage
+    p npm, bower, global
+    h3 Well-Tested
+    p Mocha, Chai,
+    h3 No Dependencies
+    p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum, eum deserunt distinctio at quisquam architecto minima, tenetur dolorum molestiae totam autem eos magnam! Modi temporibus fuga, consequuntur quia architecto similique.
+
+block aside
+  section

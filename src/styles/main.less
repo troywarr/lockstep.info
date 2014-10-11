@@ -111,14 +111,25 @@ iframe {
   border: none;
 }
 
-article,
 header,
+main,
 footer {
   .inner {
     @paddingBodyHorizontal();
     max-width: 1080px;
     margin: 0 auto;
   }
+}
+
+article {
+  width: 65%;
+  float: left;
+}
+
+aside {
+  width: 35%;
+  float: right;
+  padding-left: 30px;
 }
 
 code {
@@ -241,14 +252,14 @@ header {
 }
 
 
-// article
+// main
 
-article {
+main {
   color: @colorText;
 
   .inner {
-    margin-top: 4rem;
     margin-bottom: 6rem;
+    .clearFix();
   }
 
   p,
@@ -349,4 +360,39 @@ pre[class*="language-"] {
 .icon-link-external {
   .box(1.5rem);
   fill: lighten(@colorHeader, 25%);
+}
+
+.icon-link {
+  .box(2rem);
+  fill: lighten(@colorHeader, 25%);
+}
+
+
+// fragment anchors
+
+.fragment-anchor {
+  position: relative;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover .icon {
+      visibility: visible;
+    }
+  }
+
+  .icon {
+    position: absolute;
+    left: -32px;
+    visibility: hidden;
+  }
+}
+
+h2 .icon {
+  bottom: 7px;
+}
+
+h3 .icon {
+  bottom: 4px;
 }

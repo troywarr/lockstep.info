@@ -1,0 +1,4 @@
+add dynamic scrolling effects (see: https://www.npmjs.org/package/scrollmonitor)
+  retracting header
+  "back to top" button
+  fixed side nav

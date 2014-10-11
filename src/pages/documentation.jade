@@ -13,12 +13,56 @@ block page-nav
   li
     a(href="features.html") Features
 
-block content
-  h2 Documentation
-  p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi dolorum porro quo excepturi laudantium magni atque iure quam officiis doloremque aperiam, quasi! Quae itaque soluta temporibus, earum ratione nemo harum!
-  p Repellat iusto laboriosam, modi totam maiores pariatur dolores laborum, sunt unde nam explicabo sequi error cumque molestiae cupiditate earum, vero aliquam aut. Fuga consequuntur voluptate doloremque quos iste optio sapiente, numquam, eius deserunt at iusto maiores porro dolore. Laboriosam, repellat architecto repudiandae sequi deleniti.
-  pre(data-src="../snippets/javascript/1.js")
-  p Assumenda accusantium cum a corrupti beatae unde doloribus tempore, aut saepe sunt voluptas molestiae illum, obcaecati libero atque natus velit exercitationem voluptates?
-  p(data-height="250", data-theme-id="0", data-slug-hash="futik", data-default-tab="result", data-user="troywarr", class="codepen")
-    See the Pen #[a(href="http://codepen.io/troywarr/pen/futik/") futik] by Troy Warr (#[a(href="http://codepen.io/troywarr") @troywarr]) on [a(href="http://codepen.io") CodePen].
-  script(async, src="//codepen.io/assets/embed/ei.js")
+block article
+  section
+    h2#api API
+    p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi dolorum porro quo excepturi laudantium magni atque iure quam officiis doloremque aperiam, quasi! Quae itaque soluta temporibus, earum ratione nemo harum!
+    p Repellat iusto laboriosam, modi totam maiores pariatur dolores laborum, sunt unde nam explicabo sequi error cumque molestiae cupiditate earum, vero aliquam aut. Fuga consequuntur voluptate doloremque quos iste optio sapiente, numquam, eius deserunt at iusto maiores porro dolore. Laboriosam, repellat architecto repudiandae sequi deleniti.
+    h3#lockstep Lockstep()
+    p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque magnam minus, voluptates quo quasi tempore asperiores ullam eaque consectetur perspiciatis, repudiandae similique ipsa laudantium officia at quisquam cumque aliquid. Magni!
+    h4 Lockstep(callback)
+    h4 Lockstep(options)
+    h4 Lockstep(options [, callback])
+    h3#start .start()
+    p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque magnam minus, voluptates quo quasi tempore asperiores ullam eaque consectetur perspiciatis, repudiandae similique ipsa laudantium officia at quisquam cumque aliquid. Magni!
+    h4 .start([callback])
+    h3#stop .stop()
+    p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque magnam minus, voluptates quo quasi tempore asperiores ullam eaque consectetur perspiciatis, repudiandae similique ipsa laudantium officia at quisquam cumque aliquid. Magni!
+    h4 .stop([callback])
+    h3#reset .reset()
+    p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque magnam minus, voluptates quo quasi tempore asperiores ullam eaque consectetur perspiciatis, repudiandae similique ipsa laudantium officia at quisquam cumque aliquid. Magni!
+    h4 .reset([callback] [, count])
+    h3#reset .add()
+    p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque magnam minus, voluptates quo quasi tempore asperiores ullam eaque consectetur perspiciatis, repudiandae similique ipsa laudantium officia at quisquam cumque aliquid. Magni!
+    h4 .add(time)
+    h3#reset .subtract()
+    p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque magnam minus, voluptates quo quasi tempore asperiores ullam eaque consectetur perspiciatis, repudiandae similique ipsa laudantium officia at quisquam cumque aliquid. Magni!
+    h4 .subtract(time)
+    h3#reset .getInfo()
+    p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque magnam minus, voluptates quo quasi tempore asperiores ullam eaque consectetur perspiciatis, repudiandae similique ipsa laudantium officia at quisquam cumque aliquid. Magni!
+    h4 .getInfo()
+    h3#reset .setInfo()
+    p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque magnam minus, voluptates quo quasi tempore asperiores ullam eaque consectetur perspiciatis, repudiandae similique ipsa laudantium officia at quisquam cumque aliquid. Magni!
+    h4 .setInfo(info)
+    h3#reset .when()
+    p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque magnam minus, voluptates quo quasi tempore asperiores ullam eaque consectetur perspiciatis, repudiandae similique ipsa laudantium officia at quisquam cumque aliquid. Magni!
+    h4 .when(time, callback)
+    h4 .when([{ time, callback }])
+    h3#reset .every()
+    p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque magnam minus, voluptates quo quasi tempore asperiores ullam eaque consectetur perspiciatis, repudiandae similique ipsa laudantium officia at quisquam cumque aliquid. Magni!
+    h4 .every(intervalTime, callback)
+    h3#reset .while()
+    p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque magnam minus, voluptates quo quasi tempore asperiores ullam eaque consectetur perspiciatis, repudiandae similique ipsa laudantium officia at quisquam cumque aliquid. Magni!
+    h4 .while(startTime, endTime, callback)
+    h3#reset .during()
+    p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque magnam minus, voluptates quo quasi tempore asperiores ullam eaque consectetur perspiciatis, repudiandae similique ipsa laudantium officia at quisquam cumque aliquid. Magni!
+    h4 .during(startTime, endTime, startCallback, endCallback)
+    h3#reset .beginning()
+    p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque magnam minus, voluptates quo quasi tempore asperiores ullam eaque consectetur perspiciatis, repudiandae similique ipsa laudantium officia at quisquam cumque aliquid. Magni!
+    h4 .beginning(startTime, startCallback)
+    h3#reset .ending()
+    p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque magnam minus, voluptates quo quasi tempore asperiores ullam eaque consectetur perspiciatis, repudiandae similique ipsa laudantium officia at quisquam cumque aliquid. Magni!
+    h4 .ending(endTime, endCallback)
+
+block aside
+  section
