@@ -134,6 +134,11 @@ gulp.task 'scripts', ->
     .pipe gulpIf PROD, uglify()
     .pipe gulp.dest "#{paths.dist}scripts/"
 
+  # HTML5 shiv (https://github.com/aFarkas/html5shiv/blob/master/package.json)
+  gulp
+    .src "#{paths.npm}html5shiv/dist/html5shiv.min.js"
+    .pipe gulp.dest "#{paths.dist}scripts/"
+
 
 
 # compress images
