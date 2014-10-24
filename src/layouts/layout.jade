@@ -1,20 +1,20 @@
-include ../layouts/mixins.jade
+include ../mixins/shared.jade
 
 
 
 doctype html
-html(class="no-js", lang="en")
+html(class="no-js" lang="en")
 
   head
 
     meta(charset="utf-8")
-    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
     block title
-    meta(name="description", content="Lockstep.js, a JavaScript library to create accurate timers.")
-    meta(name="viewport", content="width=device-width, initial-scale=1")
+    meta(name="description" content="Lockstep.js, a JavaScript library to create accurate timers.")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
 
-    link(rel="stylesheet", href="http://fonts.googleapis.com/css?family=Istok+Web:400,700,400italic,700italic|Merriweather:400,900italic,900,700italic,700,400italic,300italic,300")
-    link(rel="stylesheet", href="styles/main.min.css")
+    link(rel="stylesheet" href="http://fonts.googleapis.com/css?family=Istok+Web:400,700,400italic,700italic|Merriweather:400,900italic,900,700italic,700,400italic,300italic,300")
+    link(rel="stylesheet" href="styles/main.min.css")
 
     script(src="scripts/html5shiv.min.js")
 
@@ -34,7 +34,7 @@ html(class="no-js", lang="en")
           ul
             block page-nav
             li.fork
-              a(href="https://github.com/troywarr/lockstep-js", target="_blank")
+              a(href="https://github.com/troywarr/lockstep-js" target="_blank")
                 svg.icon.icon-mark-github
                   use(xlink:href="#icon-mark-github")
                 | Fork
@@ -54,8 +54,8 @@ html(class="no-js", lang="en")
     footer.page-row
       section.inner
         div.social-code
-          //- iframe(src="http://ghbtns.com/github-btn.html?user=troywarr&repo=lockstep-js&type=watch&count=true&size=large", width="160", height="30")
-          //- iframe(src="http://ghbtns.com/github-btn.html?user=troywarr&repo=lockstep-js&type=fork&count=true&size=large", width="160", height="30")
-          //- iframe(src="http://ghbtns.com/github-btn.html?user=troywarr&repo=lockstep-js&type=follow&count=true&size=large", width="240", height="30")
+          //- iframe(src="http://ghbtns.com/github-btn.html?user=troywarr&repo=lockstep-js&type=watch&count=true&size=large" width="160" height="30")
+          //- iframe(src="http://ghbtns.com/github-btn.html?user=troywarr&repo=lockstep-js&type=fork&count=true&size=large" width="160" height="30")
+          //- iframe(src="http://ghbtns.com/github-btn.html?user=troywarr&repo=lockstep-js&type=follow&count=true&size=large" width="240" height="30")
 
     script(src="scripts/main.min.js")

@@ -2,3 +2,6 @@ add dynamic scrolling effects (see: https://www.npmjs.org/package/scrollmonitor)
   retracting header
   "back to top" button
   fixed side nav
+adapt example
+  http://codepen.io/christianhanvey/pen/imKIb
+integrate https://www.npmjs.org/package/gulp-rev or https://www.npmjs.org/package/gulp-rev-all
